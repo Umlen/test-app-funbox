@@ -8,7 +8,7 @@ module.exports = {
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, 'public'),
           },
           compress: true,
           port: 9000,
@@ -26,14 +26,6 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
             },
-            /*{
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                  {
-                    loader: 'file-loader',
-                  },
-                ],
-            },*/
         ]
     }
 };
