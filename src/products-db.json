@@ -1,0 +1,41 @@
+ [
+        {
+            "id": 1,
+            "state": "default",
+            "tagLine": "Сказочное заморское яство",
+            "tagLineActiveHover": "Котэ не одобряет?",
+            "name": "Нямушка",
+            "subName": "с фуа-гра",
+            "description": "10 порций <br \/> мышь в подарок",
+            "weight": "0,5 <br \/> кг",
+            "underCardText": "Чего сидишь? Порадуй котэ, ",
+            "underCardTextActive": "Печень утки разварная с артишоками.",
+            "underCardTextEmpty": "Печалька, с фуагра закончился."
+        },
+        {
+            "id": 2,
+            "state": "active",
+            "tagLine": "Сказочное заморское яство",
+            "tagLineActiveHover": "Котэ не одобряет?",
+            "name": "Нямушка",
+            "subName": "с рыбой",
+            "description": "40 порций <br \/> 2 мыши в подарок",
+            "weight": "2 <br \/> кг",
+            "underCardText": "Чего сидишь? Порадуй котэ, ",
+            "underCardTextActive": "Головы щучьи с чесноком да свежайшая сёмгушка.",
+            "underCardTextEmpty": "Печалька, с рыбой закончился."
+        },
+        {
+            "id": 3,
+            "state": "empty",
+            "tagLine": "Сказочное заморское яство",
+            "tagLineActiveHover": "Котэ не одобряет?",
+            "name": "Нямушка",
+            "subName": "с курой",
+            "description": "100 порций <br \/> 5 мышей в подарок <br \/> заказчик доволен",
+            "weight": "5 <br \/> кг",
+            "underCardText": "Чего сидишь? Порадуй котэ, ",
+            "underCardTextActive": "Филе из цыплят с трюфелями в бульоне.",
+            "underCardTextEmpty": "Печалька, с курой закончился."
+        }
+    ]

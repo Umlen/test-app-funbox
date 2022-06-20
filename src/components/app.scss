@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+
+$default-base: #1698D9;
+$default-hover: #2EA8E6;
+
+$active-base: #D91667;
+$active-hover: #E52E7A;
+
+$empty-color: #B3B3B3;
+
+main {
+  margin: auto;
+  width: 100%;
+  display: grid;
+  display: -ms-grid;
+  -ms-grid-columns: 1fr 48px 1fr 48px 1fr;
+  grid-template-columns: repeat(3, 1fr); 
+  align-items: center;
+  gap: 3rem;
+}
+
+/*для ie */
+
+main {
+  & div:nth-child(1) {
+    -ms-grid-column: 1;
+    //-ms-grid-row: 1;
+  }
+  & div:nth-child(2) {
+    -ms-grid-column: 3;
+  }
+  & div:nth-child(3) {
+    -ms-grid-column: 5;
+  }
+}
+
+
+h1 {
+  font-size: 2.25rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: #666666
+}
+
+@mixin product-card-mixin {
+  margin: auto;
+  height: 509px;
+  width: 320px;
+  position: relative;  
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+@mixin product-card-tagline-mixin {
+  background-color: #fff;
+  border: 5px solid;
+  padding-top: 1.5rem;
+  flex-grow: 1;
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0 5px 0 0;
+  z-index: 100000;
+}
+
+@mixin product-card-body-mixin() {
+  min-height: 471px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 5px solid;
+  border-top: none;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+    & h2, h3, p {
+      padding: .5rem 0 0 2.2rem;
+    }
+}
+
+.product-card {
+  @include product-card-mixin();
+    &:hover .product-card-body, &:hover .product-card-tagline {
+      border-color: $default-hover;
+    }
+    &:hover .product-card-weight {
+      background-color: $default-hover;
+    }
+    &:hover .product-card-header-corner{
+        width: 43px;
+        background: linear-gradient(-45deg, #fff, #fff 27.5px, $default-hover 0, $default-hover 32px, transparent 0)
+    }
+}
+
+.product-card-active {
+  @include product-card-mixin();
+  &:hover .product-card-body-active, 
+  &:hover .product-card-tagline-active {
+    border-color: $active-hover;
+  }
+  &:hover .product-card-weight {
+    background-color: $active-hover;
+  }
+  &:hover .product-card-header-corner-active{
+      width: 43px;
+      background: linear-gradient(-45deg, #fff, #fff 27.5px, $active-hover 0, $active-hover 32px, transparent 0)
+  }
+}
+
+.product-card-empty {
+  @include product-card-mixin();
+    & h2, h3, p {
+      color: $empty-color;
+    }
+    & .product-card-weight {
+      background-color: $empty-color;
+      & p {
+        color: #fff;
+      }
+    }
+    &:hover, 
+    & .product-card-header:hover {
+      cursor: auto;
+    }
+}
+
+.product-card-header {
+  display: flex;
+  height: 44px;
+  margin-bottom: -4px;
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+/*Следующие три класса делают скошенный угол для разных состояний*/
+
+.product-card-header-corner {
+  width: 43px;
+  background: linear-gradient(-45deg, #fff, #fff 27.5px, $default-base 0, $default-base 32px, transparent 0)
+}
+
+.product-card-header-corner-active {
+  width: 43px;
+  background: linear-gradient(-45deg, #fff, #fff 27.5px, $active-base 0, $active-base 32px, transparent 0)
+}
+
+.product-card-header-corner-empty {
+  width: 43px;
+  background: linear-gradient(-45deg, #fff, #fff 27.5px, $empty-color 0, $empty-color 32px, transparent 0)
+}
+
+.product-card-tagline {
+  @include product-card-tagline-mixin();
+  border-color: $default-base;
+}
+
+.product-card-tagline-active {
+  @include product-card-tagline-mixin();
+  border-color: $active-base;
+}
+
+/*Цвет заголовка выбранной карточки при hover эффекте*/
+.product-card-tagline-activehover {
+  color: #E62E7A;
+}
+
+.product-card-tagline-empty {
+  @include product-card-tagline-mixin();
+  border-color: $empty-color;
+}
+
+.product-card-body {
+  @include product-card-body-mixin();
+  border-color: $default-base;
+}
+
+.product-card-body-active {
+  @include product-card-body-mixin();
+  border-color: $active-base;
+}
+
+.product-card-body-empty {
+  @include product-card-body-mixin();
+  border-color: $empty-color;
+}
+
+.cat-photo-class {
+  position: absolute;
+  bottom: -75px;
+  left: -25px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cat-photo-empty-class {
+  opacity: .5;
+}
+
+.product-card-weight {
+  position: absolute;
+  left: 70%;
+  top: 75.44%;
+  width: 80px;
+  height: 80px;
+  background: $default-base;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    & p {
+      color: #fff;
+      font-size: 2.5rem;
+      line-height: 2rem;
+      padding: 0;
+    }
+}
+
+.product-card-weight-active {
+  background: $active-base;
+}
+
+.under-card-text {
+  padding-top: 1rem;
+  color: #fff;
+  text-align: center;
+  font-size: .8rem;
+  padding-bottom: 1rem;
+    &:hover {
+      cursor: auto;
+    }
+    & span {
+      text-decoration: underline dashed;
+      text-underline-position: under;
+      color: $default-base;
+        &:hover {
+          cursor: pointer;
+          color: $default-hover;
+        }
+    }
+}
+
+.product-card-empty .under-card-text {
+  color: #FFFF66;
+}
+
+/*Убираем слово "купи"*/
+.product-card-body-active + .under-card-text span, 
+.product-card-empty .under-card-text span {
+  display: none;
+}
+
+/*Медиа запросы для мобильных экранов*/
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(2, 1fr); 
+    & div:first-child {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: repeat(1, 1fr); 
+    & div:first-child  {
+      grid-column-start: 1;
+      grid-column-end: 1;
+    }
+  }
+}

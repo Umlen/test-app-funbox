@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+body {
+    min-height: 100%;
+    background-size: cover;
+    background-image: url('./images/background-2x.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-image: url('./images/shadow.png');
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#root {
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    body {
+        background-image: url('./images/background.png');
+    }
+}
